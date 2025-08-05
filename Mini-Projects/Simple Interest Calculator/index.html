@@ -1,11 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="shortcut icon" href="check.png" type="image/x-icon">
+    <title>Simple Interest Calculator</title>
+  </head>
+  <body>
+    <div class="min-h-screen bg-[#0f0f0f] flex items-center justify-center p-4">
+      <section
+        class="bg-[#1a1a1a] text-[#f1f1f1] p-6 rounded-2xl shadow-xl w-full max-w-md space-y-5"
+      >
+        <h2 class="text-2xl font-bold text-center">
+          Simple Interest Calculator
+        </h2>
+
+        <form id="siForm" class="space-y-4">
+          <div>
+            <label for="principal" class="block text-sm mb-1"
+              >Principal (₹)</label
+            >
+            <input
+              type="number"
+              id="principal"
+              name="principal"
+              placeholder="Enter principal amount"
+              class="w-full px-4 py-3 rounded-lg bg-[#0f0f0f] border border-[#333] text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 appearance-none [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none"
+              required
+            />
+          </div>
+
+          <div>
+            <label for="rate" class="block text-sm mb-1"
+              >Rate of Interest (%)</label
+            >
+            <input
+              type="number"
+              id="rate"
+              name="rate"
+              placeholder="Annual rate in %"
+              class="w-full px-4 py-3 rounded-lg bg-[#0f0f0f] border border-[#333] text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 appearance-none [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none"
+              required
+            />
+          </div>
+
+          <div>
+            <label for="time" class="block text-sm mb-1">Time (years)</label>
+            <input
+              type="number"
+              id="time"
+              name="time"
+              placeholder="Duration in years"
+              class="w-full px-4 py-3 rounded-lg bg-[#0f0f0f] border border-[#333] text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 appearance-none [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none"
+              required
+            />
+          </div>
+
+          <button
+            type="submit"
+            class="w-full py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg transition"
+          >
+            Calculate Interest
+          </button>
+        </form>
+
+        <div
+          id="siResult"
+          class="text-center text-base font-medium text-gray-300 mt-4"
+        >
+          <!-- Result will appear here -->
+          Your simple interest will appear here.
+        </div>
+      </section>
+    </div>
+    <script src="./script.js"></script>
+  </body>
 </html>
