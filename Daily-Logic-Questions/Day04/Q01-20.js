@@ -1,9 +1,19 @@
 // 🔰 LEVEL 1 – Array Basics & Traversal (20 Questions)
 // Print all elements of an array
+let arr = [1,2,3,4,5];
+for (let i = 0; i < arr.length; i++) {
+    console.log(arr[i]);
+};
 
 // Find the sum of all elements
+let sum = 0;
+for (let i = 0; i < arr.length; i++) {
+    sum += arr[i];  
+}
+console.log("Sum:", sum);
 
 // Count even and odd elements
+
 
 // Count positive, negative and zero elements
 
