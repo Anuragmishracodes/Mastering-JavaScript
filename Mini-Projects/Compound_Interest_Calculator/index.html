@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Compound Interest Calculator</title>
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-neutral-950 h-screen flex items-center justify-center px-4">
+
+  <div class="w-full max-w-md bg-neutral-900 rounded-2xl shadow-lg p-6">
+    <h1 class="text-2xl font-semibold text-white text-center mb-6">
+      Compound Interest Calculator
+    </h1>
+
+    <!-- Inputs -->
+    <div class="space-y-4">
+      <div>
+        <label class="block text-sm text-gray-300 mb-1">Principal Amount (₹)</label>
+        <input
+          id="principal"
+          type="number"
+          class="w-full px-4 py-2 rounded-lg bg-neutral-800 text-white focus:outline-none focus:ring-2 focus:ring-indigo-500"
+          placeholder="Enter principal"
+        />
+      </div>
+
+      <div>
+        <label class="block text-sm text-gray-300 mb-1">Interest Rate (% per annum)</label>
+        <input
+          id="rate"
+          type="number"
+          step="0.01"
+          class="w-full px-4 py-2 rounded-lg bg-neutral-800 text-white focus:outline-none focus:ring-2 focus:ring-indigo-500"
+          placeholder="Enter rate"
+        />
+      </div>
+
+      <div>
+        <label class="block text-sm text-gray-300 mb-1">Time (Years)</label>
+        <input
+          id="time"
+          type="number"
+          class="w-full px-4 py-2 rounded-lg bg-neutral-800 text-white focus:outline-none focus:ring-2 focus:ring-indigo-500"
+          placeholder="Enter time"
+        />
+      </div>
+
+      <div>
+        <label class="block text-sm text-gray-300 mb-1">Compounding Frequency</label>
+        <select
+          id="frequency"
+          class="w-full px-4 py-2 rounded-lg bg-neutral-800 text-white focus:outline-none focus:ring-2 focus:ring-indigo-500"
+        >
+          <option value="1">Yearly</option>
+          <option value="4">Quarterly</option>
+          <option value="12">Monthly</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- Button -->
+    <button
+      onclick="calculateCI()"
+      class="w-full mt-6 bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 rounded-lg transition"
+    >
+      Calculate
+    </button>
+
+    <!-- Result -->
+    <div id="result" class="mt-6 hidden">
+      <div class="bg-gray-700 rounded-lg p-4 text-center">
+        <p class="text-gray-300 text-sm">Final Amount</p>
+        <p id="finalAmount" class="text-xl font-semibold text-white mt-1"></p>
+
+        <p class="text-gray-300 text-sm mt-3">Total Interest Earned</p>
+        <p id="interestEarned" class="text-lg font-medium text-green-400 mt-1"></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- JavaScript -->
+  <script>
+    function calculateCI() {
+      const principal = parseFloat(document.getElementById("principal").value);
+      const rate = parseFloat(document.getElementById("rate").value);
+      const time = parseFloat(document.getElementById("time").value);
+      const frequency = parseInt(document.getElementById("frequency").value);
+
+      if (!principal || !rate || !time) {
+        alert("Please enter all values correctly");
+        return;
+      }
+
+      const r = rate / 100;
+      const amount = principal * Math.pow(1 + r / frequency, frequency * time);
+      const interest = amount - principal;
+
+      document.getElementById("finalAmount").innerText =
+        "₹ " + amount.toFixed(2);
+
+      document.getElementById("interestEarned").innerText =
+        "₹ " + interest.toFixed(2);
+
+      document.getElementById("result").classList.remove("hidden");
+    }
+  </script>
+
+</body>
+</html>
