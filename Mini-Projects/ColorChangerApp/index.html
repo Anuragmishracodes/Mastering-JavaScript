@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Color Changer App</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  </head>
+  <body>
+    <div
+      class="w-full h-screen flex flex-col gap-6 justify-center items-center bg-neutral-950"
+    >
+      <div class="w-fit h-fit flex flex-col justify-between items-center bg-neutral-900 p-4 rounded-2xl">
+        <div id="main" class="w-80 transition-colors duration-300 h-48 rounded-2xl flex justify-center items-center font-[Satoshi] text-4xl "></div>
+        <div class="w-full">
+          <h1
+            class="text-neutral-100 capitalize mx-2 my-4 font-medium text-left text-2xl font-[Satoshi] tracking-tighter"
+          >
+          </h1>
+        </div>
+        <button
+          id="changeButton"
+          class="px-28 py-3 cursor-pointer bg-[#D6FFB7] text-[16px] flex gap-6 justify-center leading-[28px] text-center align-top items-center font-medium font-[Satoshi] rounded-xl"
+        >
+          <span>Change</span>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+          >
+            <!-- Icon from Solar by 480 Design - https://creativecommons.org/licenses/by/4.0/ -->
+            <path
+              fill="none"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="1.5"
+              d="M4 12h2.5M20 12l-6-6m6 6l-6 6m6-6H9.5"
+            />
+          </svg>
+        </button>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
