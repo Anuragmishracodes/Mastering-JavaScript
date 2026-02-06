@@ -54,7 +54,7 @@ function render() {
     const bgClass = `bg-${colors[index]}-${shades[shadeIndex]}`;
     main.classList.add(bgClass);
     heading.textContent = `${colors[index]}-${shades[shadeIndex]}`;
-    if (shadeIndex > 6) {
+    if (shadeIndex > 5) {
         main.classList.add("text-white");
     } else {
         main.classList.remove("text-white");
