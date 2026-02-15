@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Real Time Clock</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  </head>
+  <body>
+    <div id="main" class="w-full h-screen selection:bg-[#D6FFB7] selection:text-neutral-950 bg-neutral-950 font-[Satoshi] flex justify-center items-center text-neutral-100">
+        <div id="modes" class="w-full justify-end flex items-center gap-3 p-6 absolute top-0">
+            <audio src="audio.mp3" controls loop autoplay id="audio" class="hidden"></audio>
+            <button class="p-3 bg-neutral-900 border-2 active:border-violet-600 cursor-pointer border-neutral-800/50 rounded-xl" id="toggleMode">
+              <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-volume-off"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M15 8a5 5 0 0 1 1.912 4.934m-1.377 2.602a5 5 0 0 1 -.535 .464" /><path d="M17.7 5a9 9 0 0 1 2.362 11.086m-1.676 2.299a9 9 0 0 1 -.686 .615" /><path d="M9.069 5.054l.431 -.554a.8 .8 0 0 1 1.5 .5v2m0 4v8a.8 .8 0 0 1 -1.5 .5l-3.5 -4.5h-2a1 1 0 0 1 -1 -1v-4a1 1 0 0 1 1 -1h2l1.294 -1.664" /><path d="M3 3l18 18" /></svg>
+            </button>
+        </div>
+        <div id="date" class="w-fit mr-6 text-7xl max-md:text-4xl max-sm:text-2xl font-bold h-20 flex justify-center items-center"></div>
+        <div id="time" class="w-fit  h-20 text-7xl max-md:text-4xl max-sm:text-2xl font-bold flex justify-center items-center"></div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
